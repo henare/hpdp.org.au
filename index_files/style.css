@@ -1,0 +1,24 @@
+/*
+Theme Name: HPDP
+Theme URI: http://www.hpdp.org.au
+Author: Harold Park Hackers
+Author URI: http://www.hpdp.org.au/
+Description: The HPDP theme, a child theme of Twenty Eleven
+Version: 1.0
+License: GNU General Public License
+Template: twentyeleven
+*/
+
+@import url("twentyeleven_style.css");
+
+#branding #searchform {
+    display: none;
+}
+
+#branding {
+    border-top: none;
+}
+
+#branding .only-search + #access div {
+    padding-right: 0px;
+}
