@@ -94,13 +94,19 @@
 			</div><!-- .entry-content -->
 
 			<footer class="entry-meta">
-				<span class="cat-links">
-					<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span>{{ post.categories | array_to_sentence_string }}
-				</span>
-				<span class="sep"> | </span>
-				<span class="tag-links">
-					<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> {{ post.tags }}
-				</span>
+				{%- if post.categories.size > 0 -%}
+					<span class="cat-links">
+					  <span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> {{ post.categories | array_to_sentence_string }}
+					</span>
+				{%- endif -%}
+				{%- if post.categories.size > 0 and post.tags.size > 0 -%}
+					<span class="sep"> | </span>
+				{%- endif -%}
+				{%- if post.tags.size > 0 -%}
+					<span class="tag-links">
+						<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> {{ post.tags | array_to_sentence_string: ' ' }}
+					</span>
+				{%- endif -%}
 			</footer><!-- .entry-meta -->
 		</article><!-- #post-831 -->
 	{%- endfor -%}
