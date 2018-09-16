@@ -85,7 +85,7 @@
 				<h1 class="entry-title"><a href="{{ post.url | relative_url }}" rel="bookmark">{{ post.title | escape }}</a></h1>
 				<div class="entry-meta">
 					{%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
-					<span class="sep">Posted on </span><a href="{{ post.url | relative_url }}" rel="bookmark"><time class="entry-date" datetime="{{ page.date |  date: date_to_xmlschema }}">{{ page.date | date: date_format }}</time></a>
+					<span class="sep">Posted on </span><a href="{{ post.url | relative_url }}" rel="bookmark"><time class="entry-date" datetime="{{ post.date |  date: date_to_xmlschema }}">{{ post.date | date: date_format }}</time></a>
 				</div><!-- .entry-meta -->
 			</header><!-- .entry-header -->
 
