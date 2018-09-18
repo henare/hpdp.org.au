@@ -71,53 +71,7 @@
 
 		<div id="primary">
 			<div id="content" role="main">
-
-
-						<nav id="nav-above">
-			<h3 class="assistive-text">Post navigation</h3>
-			<div class="nav-previous"><a href="http://www.hpdp.org.au/page/2/"><span class="meta-nav">←</span> Older posts</a></div>
-			<div class="nav-next"></div>
-		</nav><!-- #nav-above -->
-
-	{%- for post in site.posts -%}
-		<article class="post type-post status-publish format-standard hentry">
-			<header class="entry-header">
-				<h1 class="entry-title"><a href="{{ post.url | relative_url }}" rel="bookmark">{{ post.title | escape }}</a></h1>
-				<div class="entry-meta">
-					{%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
-					<span class="sep">Posted on </span><a href="{{ post.url | relative_url }}" rel="bookmark"><time class="entry-date" datetime="{{ post.date |  date: date_to_xmlschema }}">{{ post.date | date: date_format }}</time></a>
-				</div><!-- .entry-meta -->
-			</header><!-- .entry-header -->
-
-			<div class="entry-content">
-				{{ post.content }}
-			</div><!-- .entry-content -->
-
-			<footer class="entry-meta">
-				{%- if post.categories.size > 0 -%}
-					<span class="cat-links">
-					  <span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> {{ post.categories | array_to_sentence_string }}
-					</span>
-				{%- endif -%}
-				{%- if post.categories.size > 0 and post.tags.size > 0 -%}
-					<span class="sep"> | </span>
-				{%- endif -%}
-				{%- if post.tags.size > 0 -%}
-					<span class="tag-links">
-						<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> {{ post.tags | array_to_sentence_string: ' ' }}
-					</span>
-				{%- endif -%}
-			</footer><!-- .entry-meta -->
-		</article><!-- #post-831 -->
-	{%- endfor -%}
-
-						<nav id="nav-below">
-			<h3 class="assistive-text">Post navigation</h3>
-			<div class="nav-previous"><a href="http://www.hpdp.org.au/page/2/"><span class="meta-nav">←</span> Older posts</a></div>
-			<div class="nav-next"></div>
-		</nav><!-- #nav-above -->
-
-
+        {{ content }}
 			</div><!-- #content -->
 		</div><!-- #primary -->
 	</div><!-- #main -->
