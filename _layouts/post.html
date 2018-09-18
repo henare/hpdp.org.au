@@ -1,0 +1,33 @@
+---
+layout: default
+---
+{%- comment -%}TODO: This is copied from index - refactor to DRY it up?{%- endcomment -%}
+<article class="post type-post status-publish format-standard hentry">
+  <header class="entry-header">
+    <h1 class="entry-title"><a href="{{ page.url | relative_url }}" rel="bookmark">{{ page.title | escape }}</a></h1>
+    <div class="entry-meta">
+      {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
+      <span class="sep">Posted on </span><a href="{{ page.url | relative_url }}" rel="bookmark"><time class="entry-date" datetime="{{ page.date |  date: date_to_xmlschema }}">{{ page.date | date: date_format }}</time></a>
+    </div><!-- .entry-meta -->
+  </header><!-- .entry-header -->
+
+  <div class="entry-content">
+    {{ page.content }}
+  </div><!-- .entry-content -->
+
+  <footer class="entry-meta">
+    {%- if page.categories.size > 0 -%}
+      <span class="cat-links">
+        <span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> {{ page.categories | array_to_sentence_string }}
+      </span>
+    {%- endif -%}
+    {%- if page.categories.size > 0 and page.tags.size > 0 -%}
+      <span class="sep"> | </span>
+    {%- endif -%}
+    {%- if page.tags.size > 0 -%}
+      <span class="tag-links">
+        <span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> {{ page.tags | array_to_sentence_string: ' ' }}
+      </span>
+    {%- endif -%}
+  </footer><!-- .entry-meta -->
+</article><!-- #post-831 -->
