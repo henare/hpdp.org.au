@@ -1,0 +1,13 @@
+---
+layout: default
+---
+{%- comment -%}TODO: This is copied from index/page - refactor to DRY it up?{%- endcomment -%}
+<article class="post type-post status-publish format-standard hentry">
+  <header class="entry-header">
+    <h1 class="entry-title"><a href="{{ page.url | relative_url }}" rel="bookmark">{{ page.title | escape }}</a></h1>
+  </header><!-- .entry-header -->
+
+  <div class="entry-content">
+    {{ page.content }}
+  </div><!-- .entry-content -->
+</article>
