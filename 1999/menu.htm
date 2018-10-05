@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>Menu Bar</title>
+<base target="contents">
+</head>
+<body bgcolor="#ffffff">
+<script LANGUAGE="JavaScript1.1">
+<!--
+// pre-cache OFF images (onMouseOver)
+var onImgArray = new Array()
+onImgArray[0] = new Image(119,23)
+onImgArray[0].src = "btn_whatsnew_on.gif"
+onImgArray[1] = new Image(119,23)
+onImgArray[1].src = "btn_venues_on.gif"
+onImgArray[2] = new Image(119,23)
+onImgArray[2].src = "btn_photos_on.gif"
+onImgArray[3] = new Image(119,23)
+onImgArray[3].src = "btn_contacts_on.gif"
+onImgArray[4] = new Image(119,23)
+onImgArray[4].src = "btn_mailing_on.gif"
+onImgArray[5] = new Image(119,23)
+onImgArray[5].src = "btn_home_on.gif"
+// pre-cache OFF images (onMouseOut)
+var offImgArray = new Array()
+offImgArray[0] = new Image(119,23)
+offImgArray[0].src = "btn_whatsnew_off.gif"
+offImgArray[1] = new Image(119,23)
+offImgArray[1].src = "btn_venues_off.gif"
+offImgArray[2] = new Image(119,23)
+offImgArray[2].src = "btn_photos_off.gif"
+offImgArray[3] = new Image(119,23)
+offImgArray[3].src = "btn_contacts_off.gif"
+offImgArray[4] = new Image(119,23)
+offImgArray[4].src = "btn_mailing_off.gif"
+offImgArray[5] = new Image(119,23)
+offImgArray[5].src = "btn_home_off.gif"
+
+// load an ON image onMouseOver
+function imageOn(i) {
+	document.images[i].src = onImgArray[i].src
+}
+
+// load an OFF image onMouseOut
+function imageOff(i) {
+	document.images[i].src = offImgArray[i].src
+}
+
+// set Status message to get rid of ugly URL message
+function setMsg(msg) {
+	window.status = msg
+	return true
+}
+//-->
+</script>
+
+<center>
+<table border="0" width="570" height=100% cellspacing="0" bgcolor="#ffffff">
+  <tr> 
+    <td align="center" valign="top" width=114><a href="whatsnew.htm" onMouseOver="window.status='What's new around the traps'; imageOn(0); return;" onMouseOut="imageOff(0); return; setMsg('')"><img border="0" src="btn_whatsnew_off.gif" alt="Whats new around the traps" WIDTH="114" HEIGHT="31"></a></td>
+    <td align="center" valign="top" width=114><a href="venues.htm" onMouseOver="imageOn(1); return; setMsg('Where we&acute;ve been, where we&acute;re going');" onMouseOut="imageOff(1); return; setMsg('')"><img border="0" src="btn_venues_off.gif" alt="Where we&acute;ve been, where we&acute;re going" WIDTH="114" HEIGHT="31"></a></td>
+    <td align="center" valign="top" width=114><a href="frm_photos.htm" onMouseOver="imageOn(2); return; setMsg('See photos of the old HP');" onMouseOut="imageOff(2); return; setMsg('')"><img border="0" src="btn_photos_off.gif" alt="See photos of the old HP" WIDTH="114" HEIGHT="31"></a></td>
+    <td align="center" valign="top" width=114><a href="p_contacts.htm" onMouseOver="imageOn(3); return; setMsg('Password-protected contact list');" onMouseOut="imageOff(3); return; setMsg('')"><img border="0" src="btn_contacts_off.gif" alt="Password-protected contact list" WIDTH="114" HEIGHT="31"></a></td>
+    <td align="center" valign="top" width=114><a href="mailing.htm" onMouseOver="imageOn(4); return; setMsg('Subscribe/unsubscribe to the mailing list');" onMouseOut="imageOff(4); return; setMsg('')"><img border="0" src="btn_mailing_off.gif" alt="Subscribe/unsubscribe to the mailing list" WIDTH="114" HEIGHT="31"></a></td>
+  </tr>
+
+</table>
+</center>
+</body>
+</html>
+
+
+
