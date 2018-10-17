@@ -26,7 +26,6 @@ permalink: /:year/:month/:title/
 
 # Build settings
 markdown: kramdown
-theme: minima
 paginate: 10
 paginate_path: "/page/:num/"
 plugins:
