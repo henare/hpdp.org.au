@@ -31,3 +31,30 @@ layout: default
     {%- endif -%}
   </footer><!-- .entry-meta -->
 </article><!-- #post-831 -->
+
+{%- if page.comments -%}
+  <div id="comments">
+    <h2 id="comments-title">
+      {{ page.comments.size }}
+      {% if page.comments.size > 1 %}
+        comments
+      {% else %}
+        comment
+      {% endif %}
+    </h2>
+		<ol class="commentlist">
+      {%- for comment in page.comments -%}
+        <li class="comment">
+          <article id="comment-{{ comment.id }}" class="comment">
+            <footer class="comment-meta">
+              <div class="comment-author vcard">
+                <span class="fn">{{ comment.author }}</span> on <a href="#comment-{{ comment.id }}"><time datetime="{{ comment.date |  date: date_to_xmlschema }}">{{ comment.date | date: "%B %d, %Y at %R" }}</time></a> <span class="says">said:</span>
+              </div><!-- .comment-author .vcard -->
+            </footer>
+            <div class="comment-content">{{ comment.content | newline_to_br }}</div>
+          </article><!-- #comment-## -->
+        </li><!-- #comment-## -->
+      {%- endfor -%}
+    </ol>
+  </div>
+{%- endif -%}
