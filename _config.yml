@@ -23,6 +23,7 @@ twitter_username: ""
 github_username:  ""
 
 permalink: /:year/:month/:title/
+timezone: Australia/Sydney
 
 # Build settings
 markdown: kramdown
